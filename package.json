@@ -1,0 +1,39 @@
+{
+  "name": "siakad-uniman",
+  "version": "1.0.0",
+  "description": "Sistem Informasi Akademik modern dengan Next.js dan Laravel",
+  "main": "index.js",
+  "scripts": {
+    "dev": "concurrently \"cd backend && php artisan serve\" \"cd frontend && npm run dev\"",
+    "setup": "npm run setup:backend && npm run setup:frontend",
+    "setup:backend": "cd backend && composer install && cp .env.example .env && php artisan key:generate",
+    "setup:frontend": "cd frontend && npm install && cp .env.example .env.local",
+    "start:backend": "cd backend && php artisan serve",
+    "start:frontend": "cd frontend && npm run dev",
+    "migrate": "cd backend && php artisan migrate",
+    "migrate:fresh": "cd backend && php artisan migrate:fresh --seed",
+    "build:frontend": "cd frontend && npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Wirooo03/siakad_uniman.git"
+  },
+  "keywords": [
+    "siakad",
+    "student-information-system",
+    "laravel",
+    "nextjs",
+    "react",
+    "typescript",
+    "postgresql"
+  ],
+  "author": "Wirooo03",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^7.6.0"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=8.0.0"
+  }
+}
